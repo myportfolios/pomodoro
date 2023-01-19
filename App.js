@@ -8,13 +8,12 @@ import {
   StatusBar,
 } from "react-native"
 import { colors } from "./src/utils/colors"
+import { Focus } from "./src/features/focus"
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>
-        Open up App.js to start working on your app!
-      </Text>
+      <Focus />
       {/* <StatusBar style="auto" /> */}
     </SafeAreaView>
   )
