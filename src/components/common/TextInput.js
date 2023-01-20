@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { View, TextInput } from "react-native"
+import { View } from "react-native"
+import { TextInput } from "react-native-paper"
 import { colors } from "../../utils/colors"
 
 const TextInputComponent = ({ getTextValue, styles = {}, ...rest }) => {
@@ -8,14 +9,12 @@ const TextInputComponent = ({ getTextValue, styles = {}, ...rest }) => {
     getTextValue && getTextValue(textValue)
   }, [textValue])
   return (
-    <View>
-      <TextInput
-        style={{ ...defaultStyles.input, ...styles }}
-        onChangeText={setTextValue}
-        value={textValue}
-        {...rest}
-      />
-    </View>
+    <TextInput
+      style={{ ...defaultStyles.input, ...styles }}
+      onChangeText={setTextValue}
+      value={textValue}
+      {...rest}
+    />
   )
 }
 const defaultStyles = {
