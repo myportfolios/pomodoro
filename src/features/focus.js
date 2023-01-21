@@ -5,7 +5,7 @@ import { RoundedButton } from "../components/common/RoundedButton"
 
 import TextInputComponent from "../components/common/TextInput"
 
-export const Focus = () => {
+export const Focus = ({ addCurrentItem }) => {
   const [textValue, setTextValue] = useState("")
   const INPUT_LABEL = "Enter focus item"
   return (
@@ -22,7 +22,11 @@ export const Focus = () => {
           color={colors.white}
         />
         <View style={styles.button}>
-          <RoundedButton title="+" size={50} />
+          <RoundedButton
+            title="+"
+            size={50}
+            onPress={() => addCurrentItem(textValue)}
+          />
         </View>
       </View>
     </View>

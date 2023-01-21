@@ -1,4 +1,4 @@
-// import { StatusBar } from "expo-status-bar"
+import React, { useState } from "react"
 import {
   StyleSheet,
   Text,
@@ -11,9 +11,16 @@ import { colors } from "./src/utils/colors"
 import { Focus } from "./src/features/focus"
 
 export default function App() {
+  const [currentItem, setCurrentItem] = useState(null)
   return (
     <SafeAreaView style={styles.container}>
-      <Focus />
+      {!currentItem ? (
+        <Focus addCurrentItem={setCurrentItem} />
+      ) : (
+        <View>
+          <Text style={{ color: "white" }}>Current item is {currentItem}</Text>
+        </View>
+      )}
     </SafeAreaView>
   )
 }
