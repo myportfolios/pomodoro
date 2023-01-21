@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { View, Text, StyleSheet } from "react-native"
 import { colors } from "../utils/colors"
+import { spacing } from "../utils/sizes"
 import { RoundedButton } from "../components/common/RoundedButton"
 
 import TextInputComponent from "../components/common/TextInput"
@@ -16,7 +17,7 @@ export const Focus = ({ addCurrentItem }) => {
           styles={{
             borderColor: `${colors.white}`,
             flex: 1,
-            marginRight: 10,
+            marginRight: spacing.sm,
           }}
           label={INPUT_LABEL}
           color={colors.white}
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     // flex: 0.5, //take up half of the parent size(i.e styles.container at flex :1. Flex:1 takes up the whole screen size)
     flexDirection: "row",
-    padding: 25,
+    padding: spacing.lg,
     // justifyContent: "center", //center the item within its parent container
     justifyContent: "top",
   },
