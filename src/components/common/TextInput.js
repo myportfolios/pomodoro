@@ -3,6 +3,8 @@ import { View } from "react-native"
 import { TextInput } from "react-native-paper"
 import { colors } from "../../utils/colors"
 
+const isNull = (obj) => !(Object.keys(obj).length > 0)
+
 const TextInputComponent = ({ getTextValue, styles = {}, ...rest }) => {
   const [textValue, setTextValue] = useState("")
   useEffect(() => {
@@ -10,7 +12,8 @@ const TextInputComponent = ({ getTextValue, styles = {}, ...rest }) => {
   }, [textValue])
   return (
     <TextInput
-      style={{ ...defaultStyles.input, ...styles }}
+      //   style={{ ...defaultStyles.input, ...styles }}
+      style={isNull(styles) ? { ...defaultStyles.input } : { ...styles }}
       onChangeText={setTextValue}
       value={textValue}
       {...rest}
