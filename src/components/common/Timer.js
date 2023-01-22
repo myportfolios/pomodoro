@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { View, Text, StyleSheet, Button, Vibration } from "react-native"
+import { useKeepAwake } from "expo-keep-awake"
 import { ProgressBar } from "react-native-paper"
 import { spacing } from "../../utils/sizes"
 import { colors } from "../../utils/colors"
@@ -18,6 +19,7 @@ const PATTERN = [
 ]
 
 export const Timer = ({ focusItem, clearItem }) => {
+  useKeepAwake()
   const [isStarted, setIsStarted] = useState(false)
   const [progress, setProgress] = useState(1)
   const [minutes, setMinutes] = useState(0.1)
