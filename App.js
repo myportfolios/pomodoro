@@ -9,6 +9,7 @@ import {
 } from "react-native"
 import { colors } from "./src/utils/colors"
 import { Focus } from "./src/features/focus"
+import { Timer } from "./src/components/common/Timer"
 
 export default function App() {
   const [currentItem, setCurrentItem] = useState(null)
@@ -17,9 +18,13 @@ export default function App() {
       {!currentItem ? (
         <Focus addCurrentItem={setCurrentItem} />
       ) : (
-        <View>
-          <Text style={{ color: "white" }}>Current item is {currentItem}</Text>
-        </View>
+        // <View>
+        <Timer
+          focusItem={currentItem}
+          onTimerEnd={() => {}}
+          clearItem={() => {}}
+        />
+        // </View>
       )}
     </SafeAreaView>
   )
