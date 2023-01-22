@@ -22,7 +22,9 @@ export default function App() {
         <Timer
           focusItem={currentItem}
           onTimerEnd={() => {}}
-          clearItem={() => {}}
+          clearItem={() => {
+            setCurrentItem(null)
+          }}
         />
         // </View>
       )}

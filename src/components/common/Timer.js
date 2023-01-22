@@ -17,7 +17,7 @@ const PATTERN = [
   1 * ONE_SECOND_IN_MS,
 ]
 
-export const Timer = ({ focusItem }) => {
+export const Timer = ({ focusItem, clearItem }) => {
   const [isStarted, setIsStarted] = useState(false)
   const [progress, setProgress] = useState(1)
   const [minutes, setMinutes] = useState(0.1)
@@ -56,7 +56,7 @@ export const Timer = ({ focusItem }) => {
         )}
       </View>
       <View style={styles.clearItem}>
-        <RoundedButton title="-" onPress={() => {}} size={75} />
+        <RoundedButton title="-" onPress={clearItem} size={75} />
       </View>
     </View>
   )
