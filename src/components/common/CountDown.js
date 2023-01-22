@@ -13,13 +13,13 @@ export const Countdown = ({ minutes = 0.1, isPaused, onProgress, onEnd }) => {
   const interval = React.useRef(null)
 
   const [millis, setMillis] = useState(null)
-
+  const reset = () => setMillis(minutesToMillis(minutes))
   const countDown = () => {
     //use a callback fn to ensure that the current state of time (millis) is returned
     setMillis((time) => {
       if (time === 0) {
         clearInterval(interval.current)
-        onEnd()
+        onEnd(reset)
         return time
       }
       //get the time left - current time - 1 second
